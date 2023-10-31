@@ -56,9 +56,12 @@ let index = async function (req, res, next) {
         limit: parseInt(limit),
         offset: parseInt(offset)
     })
-    console.log(data)
+    let count = data.count
     data = await resourceCollection(data.rows)
-    return res.status(200).json(data)
+    return res.status(200).json({
+        data: data,
+        count: count
+    })
 }
 
 
