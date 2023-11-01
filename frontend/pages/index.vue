@@ -1,9 +1,21 @@
 <!-- Please remove this file from your project -->
 <template>
-  <div>
-    <div>
-      {{ responseData }}
-    </div>
+  <div class="px-20 py-10">
+      <div class="bg-white rounded-lg shadow-lg flex">
+        <div class="w-1/3">
+          <img src="path-to-your-image.jpg" alt="Product" class="h-full w-full object-cover rounded-l-lg">
+        </div>
+
+        <div class="w-2/3 p-4">
+          <h2 class="text-2xl font-semibold">Nama Produk</h2>
+          <p class="text-gray-600 text-sm">Harga: $99.99</p>
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500 text-2xl">⭐</span>
+            <span class="text-gray-600 ml-1">4.5 (120 ulasan)</span>
+          </div>
+        </div>
+      </div>
+
   </div>
 </template>
 
