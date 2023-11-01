@@ -1,3 +1,4 @@
+export { default as CardProduct } from '../../components/CardProduct.vue'
 export { default as NuxtLogo } from '../../components/NuxtLogo.vue'
 export { default as Test } from '../../components/Test.vue'
 export { default as Tutorial } from '../../components/Tutorial.vue'
