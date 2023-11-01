@@ -2,37 +2,48 @@
 <template>
 <div>
   <div>
-    {{ responseData }} oke
+    {{ responseData }} 
   </div>
 </div>
 </template>
 
 <script>
 export default {
-  async fetch() {
-    const apiKey = process.env.API_KEY;
-    console.log(apiKey)
-    // const headers = {
-    //   Authorization: `Bearer ${apiKey}`,
-      
-    // };
-
+  async asyncData({ $axios }) {
+    let responseData = {}
     try {
-      const response = await this.$axios.$get('/search?location=nyc&price=4&price=1&open_now=true&sort_by=best_match&limit=10')
+      console.log("test")
+      const response = await $axios.$get('bussnies.json')
         .then((ress) => {
-          console.log(ress)
+        responseData = ress;
 
         });
-      this.responseData = response;
     } catch (error) {
       console.error('Terjadi kesalahan dalam mengambil data:', error);
-      this.responseData = null;
+      responseData = null;
+    }
+    return {
+      responseData
     }
   },
+  // fetchOnServer: false,
+  // async fetch() {
+  //   try {
+  //     console.log("test")
+  //     const response = await this.$axios.$get('bussnies.json')
+  //       .then((ress) => {
+  //         this.responseData = ress;
+
+  //       });
+  //   } catch (error) {
+  //     console.error('Terjadi kesalahan dalam mengambil data:', error);
+  //     this.responseData = null;
+  //   }
+  // },
   name: 'NuxtTest',
   data() {
     return {
-      responseData: null
+      // responseData: null
     };
   }
 }

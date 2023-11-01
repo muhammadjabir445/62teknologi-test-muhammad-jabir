@@ -4,7 +4,7 @@ export default {
   ssr: true,
   server: {
     host: '0.0.0.0', // Listen on all network interfaces
-    port: 3000 // Your preferred port
+    port: 8080 // Your preferred port
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -52,14 +52,14 @@ export default {
   },
   publicRuntimeConfig: {
     axios: {
-      baseURL: process.env.API_BASE_URL,
+      baseURL: 'http://localhost:8080',
       headers: {
-        'Access-Control-Allow-Origin': '*',
+        // 'Access-Control-Allow-Origin': '*',
         'cache-control': 'no-cache',
         'Content-Type': 'application/json',
         'Accept': '*',
         'accept': 'application/json',
-        Authorization: `Bearer ${process.env.API_KEY}`,
+        // Authorization: `Bearer ${process.env.API_KEY}`,
       }
     },
     apiKey: process.env.API_KEY,
